@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age for Employment</title>
+</head>
+
+<body>
+    <h1>This is the JavaScript Program for Employment Verification !!</h1>
+    <script>
+        var input = prompt("Enter Integer Number", ""); // Prompt for the age input
+        var age = parseInt(input, 10); // Convert the input to an integer
+
+        function showage() {
+            if (age > 18 && age < 80) {
+                document.write("Eligible for Employment !");
+            }
+            else if (age < 18 && age > 0) {
+                document.write("Not Eligible for Employment !");
+            }
+            else {
+                document.write("Please Enter a Valid Integer Number !");
+            }
+        }
+
+        showage();
+    </script>
+</body>
+
+</html>
