@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Display Today's Date</title>
+</head>
+
+<body>
+    <h2 id="dateDisplay"></h2>
+
+    <script>
+
+        var today = new Date();
+
+        var day = today.getDate();
+        var month = today.getMonth() + 1;
+        var year = today.getFullYear();
+
+        var formattedDate = day + '/' + month + '/' + year;
+
+        document.getElementById("dateDisplay").innerHTML = "Today's date is: " + formattedDate;
+    </script>
+</body>
+
+</html>
