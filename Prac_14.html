@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration-Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <style>
+        .align {
+            text-align: left;
+        }
+
+        table {
+            background-color: aliceblue;
+            text-align: center;
+        }
+
+        thead {
+            background-color: rgb(186, 244, 255);
+        }
+
+        body {
+            font-family: "Mulish", sans-serif;
+        }
+
+        .in-input {
+            padding: 5px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        .date {
+            text-transform: uppercase;
+        }
+
+        .submit {
+            width: 20rem;
+            padding: 10px;
+            color: white;
+            background-color: black;
+            border: 2px solid lightslategray;
+            border-radius: 10px;
+        }
+
+        .submit:hover {
+            background-color: lightslategrey;
+            box-shadow: 0 0 5px 2px black;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Add validation to the form -->
+    <form id="registrationForm" onsubmit="return validateForm();">
+        <center>
+            <table border="1" cellpadding="10px">
+                <thead>
+                    <th>Properties</th>
+                    <th>Values</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Your Name:</td>
+                        <td class="align">
+                            <input class="in-input" type="text" id="name" placeholder="Enter Your Name">
+                            <div class="error" id="nameError"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth:</td>
+                        <td class="align">
+                            <input class="date in-input" type="date" id="dob" placeholder="Date of Birth">
+                            <div class="error" id="dobError"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gender:</td>
+                        <td class="align">
+                            Male<input type="radio" id="male" name="gender" value="Male">
+                            Female<input type="radio" id="female" name="gender" value="Female">
+                            <div class="error" id="genderError"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email ID:</td>
+                        <td class="align">
+                            <input class="in-input" type="text" id="email" placeholder="Enter Your Valid Email">
+                            <div class="error" id="emailError"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mobile No.:</td>
+                        <td class="align">
+                            <input class="in-input" type="tel" id="mobile" placeholder="Enter Your Mobile No.">
+                            <div class="error" id="mobileError"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Your Address:</td>
+                        <td class="align">
+                            <textarea class="in-input" id="address" placeholder="Your Address" rows="5"
+                                cols="40"></textarea>
+                            <div class="error" id="addressError"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Your State:</td>
+                        <td class="align">
+                            <input class="in-input" type="text" id="state" placeholder="Enter Your State">
+                            <div class="error" id="stateError"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Education:</td>
+                        <td class="align">
+                            <input class="in-input" type="text" id="education" placeholder="Enter Your Education">
+                            <div class="error" id="educationError"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Upload Your Image:</td>
+                        <td class="align">
+                            <input type="file" id="image" accept="image/jpeg, image/png, image/jpg">
+                            <div class="error" id="imageError"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input class="submit" type="submit" value="Submit"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </form>
+
+    <script src="Prac_14.js"></script>
+</body>
+
+</html>

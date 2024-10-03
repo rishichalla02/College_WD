@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input,
+        button {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Simple Calculator</h1>
+
+    <!-- Input fields for numbers -->
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+
+    <br>
+
+    <!-- Operation buttons -->
+    <button onclick="setOperation('+')">+</button>
+    <button onclick="setOperation('-')">-</button>
+    <button onclick="setOperation('*')">*</button>
+    <button onclick="setOperation('/')">/</button>
+
+    <br>
+    <!-- Equal button to process the calculation -->
+    <button onclick="calculate()">=</button>
+    <br>
+    
+    <!-- Result field -->
+    <input type="text" id="result" placeholder="Result" readonly>
+    
+    <script>
+        let operation = '';
+
+        // Function to set the selected operation
+        function setOperation(op) {
+            operation = op;
+        }
+
+        // Function to calculate the result
+        function calculate() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            let result = '';
+
+            // Perform the operation based on the selected operator
+            if (operation === '+') {
+                result = num1 + num2;
+            } else if (operation === '-') {
+                result = num1 - num2;
+            } else if (operation === '*') {
+                result = num1 * num2;
+            } else if (operation === '/') {
+                result = num1 / num2;
+            } else {
+                result = 'Please select an operation';
+            }
+
+            // Display the result
+            document.getElementById('result').value = result;
+        }
+    </script>
+
+</body>
+
+</html>
