@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Search Feature</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            border-collapse: collapse;
+        }
+    </style>
+    <script>
+        function searchUser() {
+            var name = document.getElementById('search_name').value; var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'Prac_18.php?name=' + name, true); xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById('results').innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Search Users</h1>
+
+    <!-- Search form -->
+    <input type="text" id="search_name" placeholder="Enter name" onkeyup="searchUser()" />
+
+    <!-- Placeholder for the results -->
+    <div id="results"></div>
+</body>
+
+</html>
