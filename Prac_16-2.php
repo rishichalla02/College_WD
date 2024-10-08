@@ -41,7 +41,8 @@ $updateStmt->bind_param("sssssisss", $name, $dob, $gender, $email, $mobile, $add
 $education, $id);
 $updateStmt->execute();
 
-header("Location: display.php"); exit();
+header("Location: Prac_16-2.php"); 
+exit();
 }
 ?>
 

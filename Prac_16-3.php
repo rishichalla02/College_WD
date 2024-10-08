@@ -21,7 +21,8 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id);
 $stmt->execute();
 
-header("Location: display.php"); // Redirect to display page exit();
+header("Location: Prac_16-2.php"); // Redirect to display page 
+exit();
 
 $stmt->close();
 $conn->close();
